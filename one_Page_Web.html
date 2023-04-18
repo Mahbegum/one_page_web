@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>css drop-dowm menu</title>
+    <link rel="stylesheet" href="menu_rolover.css">
+    
+</head>
+
+<body>
+     <div class="warp">
+        <div class="menu-container">
+            <ul class="menu">
+                <li><a href="home.html">Home</a></li>
+                   <ul class="submenu">
+                   </ul>
+                </li>
+                <li><a href="#about">About</a></li>
+               </li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+     </div>
+     <br /> <br />
+     <h1 style="text-align: center; color:green">Azo Garden</h1>
+     <h3>Welcome to Azo Garden web page.
+        We are proud of being one of the most<strong> costumer friendly </strong> center in Surrey.
+     </h3>
+     <div>
+        <img src="ring.jpg">
+     </div>
+     <br>
+     <h1>About Us:</h1>
+     <p class="inset" id="about">You can find any kinds of <b>Gemstone</b> from all around the world here in our collection.When we couldn’t find a standard that met ours, we created a new one. We started by creating a rigorous protocol for diamond sourcing that goes beyond current industry practices: Beyond Conflict FreeTM Diamonds which are selected for their ethical and environmentally responsible origins.
+
+        We were one of the first jewelers to offer blockchain-enabled diamonds at scale, to provide traceability of a diamond’s origin and ownership. Choosing a Brilliant Earth diamond offers unparalleled transparency of your diamond’s provenance.
+        
+        We strive to use 100% recycled precious metals to minimize our footprint and help diminish the negative impacts of metal mining. Precious metals can be recycled repeatedly without degrading their integrity, which means we don’t compromise quality or beauty to make sustainable jewelry.</p>
+     <div id="D">
+        <h2>Our most demaning products</h2>
+        <ul id="list">
+            <li>Toolips</li>
+            <li>Red Rose</li>
+            <li>White Rose</li>
+        </ul>
+     </div>
+  <div>
+   <h1>Lightbox</h1>
+      <div class="row">
+         <div class="column">
+           <img src="img1.jpg" onclick="openModal();currentSlide(1)" class="hover-shadow">
+         </div>
+         <div class="column">
+           <img src="img2.jpg" onclick="openModal();currentSlide(2)" class="hover-shadow">
+         </div>
+         <div class="column">
+           <img src="img3.jpg" onclick="openModal();currentSlide(3)" class="hover-shadow">
+         </div>
+         <div class="column">
+           <img src="img4.jpg" onclick="openModal();currentSlide(4)" class="hover-shadow">
+         </div>
+       </div>
+       
+       <!-- The Modal/Lightbox -->
+       <div id="myModal" class="modal">
+         <span class="close cursor" onclick="closeModal()">&times;</span>
+         <div class="modal-content">
+       
+           <div class="mySlides">
+             <div class="numbertext">1 / 4</div>
+             <img src="img1_wide.jpg" style="width:100%">
+           </div>
+       
+           <div class="mySlides">
+             <div class="numbertext">2 / 4</div>
+             <img src="img2_wide.jpg" style="width:100%">
+           </div>
+       
+           <div class="mySlides">
+             <div class="numbertext">3 / 4</div>
+             <img src="img3_wide.jpg" style="width:100%">
+           </div>
+       
+           <div class="mySlides">
+             <div class="numbertext">4 / 4</div>
+             <img src="img4_wide.jpg" style="width:100%">
+           </div>
+       
+           <!-- Next/previous controls -->
+           <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+           <a class="next" onclick="plusSlides(1)">&#10095;</a>
+       
+           <!-- Caption text -->
+           <div class="caption-container">
+             <p id="caption"></p>
+           </div>
+       
+           <!-- Thumbnail image controls -->
+           <div class="column">
+             <img class="demo" src="img1.jpg" onclick="currentSlide(1)" alt="Nature">
+           </div>
+       
+           <div class="column">
+             <img class="demo" src="img2.jpg" onclick="currentSlide(2)" alt="Snow">
+           </div>
+       
+           <div class="column">
+             <img class="demo" src="img3.jpg" onclick="currentSlide(3)" alt="Mountains">
+           </div>
+       
+           <div class="column">
+             <img class="demo" src="img4.jpg" onclick="currentSlide(4)" alt="Lights">
+           </div>
+         </div>
+        </div>
+   </div>
+   <script>
+    function openModal() {
+      document.getElementById("myModal").style.display = "block";
+    }
+    
+    function closeModal() {
+      document.getElementById("myModal").style.display = "none";
+    }
+    
+    var slideIndex = 1;
+    showSlides(slideIndex);
+    
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+    
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+    
+    function showSlides(n) {
+      var i;
+      var slides = document.getElementsByClassName("mySlides");
+      var dots = document.getElementsByClassName("demo");
+      var captionText = document.getElementById("caption");
+      if (n > slides.length) {slideIndex = 1}
+      if (n < 1) {slideIndex = slides.length}
+      for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+      }
+      for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex-1].style.display = "block";
+      dots[slideIndex-1].className += " active";
+      captionText.innerHTML = dots[slideIndex-1].alt;
+    }
+    </script>
+  </body>
+
+
+</html>
