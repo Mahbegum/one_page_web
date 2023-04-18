@@ -87,7 +87,9 @@ width:100%;
     display: table;
     clear: both;
   }
-  
+  .lightbox{
+      width:100%
+}
   /* Create four equal columns that floats next to eachother */
   .column {
     float: left;
